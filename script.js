@@ -38,11 +38,12 @@ secHigiene.appendChild(tituloHigiene)
 secHigiene.appendChild(caixaHigiene)
 caixaHigiene.appendChild(ulHigiene)
 
-function create(imagem, nome, valor) {
+function create(imagem, nome, valor, category) {
     let item = {
        image: imagem,
-       price: nome,
-       price: valor
+       title: nome,
+       price: valor,
+       category: category
     };
    
     return item;
@@ -50,11 +51,11 @@ function create(imagem, nome, valor) {
 
 for (let i = 0; i<products.length; i++) {
     if (products[i].category == 'Frutas') {
-       frutas.push(create(products[i].image, products[i].title, products[i].price));
+       frutas.push(create(products[i].image, products[i].title, products[i].price, products[i].category));
     } else if(products[i].category == 'Bebidas') {
-       bebidas.push(create(products[i].image, products[i].title, products[i].price));
+       bebidas.push(create(products[i].image, products[i].title, products[i].price, products[i].category));
     } else {
-        higiene.push(create(products[i].image, products[i].title, products[i].price));
+        higiene.push(create(products[i].image, products[i].title, products[i].price, products[i].category));
     }
 }
 
